@@ -51,12 +51,10 @@ li {
 }
 
 div {
-	border-left-width: 2px;
-	border-left-style: solid;
-	border-left-color: var(--myblue);
-    margin-bottom: 60px;
-	padding-left: 30px;
+    /* margin-bottom: 60px; */
+	/* padding-left: 30px; */
 }
+
 
 .outer {
     display: grid;
@@ -72,11 +70,38 @@ div {
 	height: auto !important;
 }
 
+.project {
+	padding-top: 200px;
+	padding-bottom: 100px;
+	margin: 0;
+}
+
+.project > div {
+	border-left-width: 2px;
+	border-left-style: solid;
+	border-left-color: var(--myblue);
+	padding-left: 30px;
+}
+
+#q, #track {
+	padding-top: 40px;
+}
+
+#drupal, #rubik {
+	padding-bottom: 200px;
+}
+
 @media (max-width: 600px) {
 	.landscape-image {
 		width: 100% !important;
 		height: auto !important;
 	}
+
+	#tim, #poynt {
+		margin-top: 100px;
+		padding-top: 100px;
+	}
+
 }
 
 @media (max-width: 900px) {
