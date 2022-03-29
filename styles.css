@@ -396,6 +396,8 @@ nav {
 	.main-content-left-column {
 		margin-left: 0;
 		width: 100%;
+		padding: 0;
+		margin: 0;
 	}
 
 	.main-content-right-column {
@@ -403,6 +405,8 @@ nav {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		padding: 0;
+		margin: 0;
 	}
 
 	.outer-experience-container {
