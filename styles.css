@@ -450,6 +450,10 @@ nav {
 		width: 95%;
 		height: auto;
 	}
+
+	.inner-footer-container {
+		text-align: center;
+	}
 }
 
 /* SCROLLBAR */
