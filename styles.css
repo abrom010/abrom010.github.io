@@ -434,6 +434,12 @@ nav {
 	.preview div {
 		margin-right: 0;
 	}
+
+	.scroll-buttons button {
+		width: 11px;
+		height: 11px;
+		margin: 7px 7px 0 0;
+	}
 }
 
 @media (max-width: 425px) {
@@ -454,6 +460,10 @@ nav {
 
 	.inner-footer-container {
 		text-align: center;
+	}
+
+	.preview-outer {
+		margin-bottom: 400px;
 	}
 }
 
