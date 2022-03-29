@@ -273,6 +273,7 @@ nav {
 .preview-outer {
 	display: inline-flex;
 	flex-grow: 0;
+	margin-bottom: 200px;
 }
 
 .preview {
