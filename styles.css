@@ -65,8 +65,8 @@ nav {
 }
 
 .nav-link-wrapper {
-	padding: 30px;
-	padding-right: 40px;
+	padding-bottom: 30px;
+	padding-top: 30px;
 	display: flex;
 	justify-content: end;
 }
@@ -362,11 +362,11 @@ h2 {
 }
 
 @media (max-width: 1300px) {
-	.nav-link-wrapper {
-		justify-content: center;
+	/*.nav-link-wrapper {
+		justify-content: start;
 		flex-direction: row-reverse;
 	}
-
+*/
 	.introduction-outer-container {
 		justify-content: center;
 		/* margin-left: 10%; */
@@ -470,6 +470,7 @@ h2 {
 		flex-direction: column-reverse;
 		padding-left: 15px;
 		align-items: center;
+		padding-right: 15px;
 	}
 
 	.nav-link {
