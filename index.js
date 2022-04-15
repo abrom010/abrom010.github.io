@@ -34,10 +34,10 @@ let id = setInterval(() => {
 	if (inView && !cease) {
 		let width = container.clientWidth - 42;
 		if (count < width && negating == false) {
-			runner.style.transform = "translate(" + count + "px, 3px)";
+			runner.style.transform = "translate(" + count + "px, 4px)";
 			count += 2;
 		} else {
-			runner.style.transform = "translate(" + count + "px, 3px) rotateY(180deg)";
+			runner.style.transform = "translate(" + count + "px, 4px) rotateY(180deg)";
 			if (count < 1) negating = false;
 			else negating = true;
 			count -= 2;
