@@ -1,0 +1,102 @@
+:root {
+  --lighter: #bbdee6;
+  --myblue: #a1cad3;
+  --darker: #57b7cc;
+  --darkest: #1887a0;
+
+  --main-light-color: var(--myblue);
+  --main-dark-color: var(--myblue);
+}
+
+@font-face {
+  font-family: Burtons;
+  src: url("Burtons.otf") format("opentype");
+}
+
+.greeting-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  margin-bottom: 0;
+}
+
+.greeting-link {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.greeting-link:hover {
+  color: var(--darker);
+}
+
+.greeting-text {
+  font-family: Burtons;
+  margin: 5px;
+}
+
+.project {
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  margin: 10px auto;
+}
+
+.project h2,
+h3,
+p {
+  margin: 0;
+}
+
+.project h2 {
+  margin-bottom: 4px;
+}
+
+.project h3 {
+  color: rgb(70, 70, 70);
+  margin-bottom: 8px;
+}
+
+.project p {
+  margin-bottom: 15px;
+}
+
+.arrows {
+  display: flex;
+  justify-content: center;
+}
+
+.arrows i {
+  margin: 5px;
+}
+
+.arrows a {
+  text-decoration: none;
+  color: black;
+}
+
+.arrows a:hover {
+  color: var(--darker);
+}
+
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--darker);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--darkest);
+}
