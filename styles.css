@@ -26,7 +26,7 @@
 }
 
 .greeting-link:hover {
-  color: var(--darker);
+  color: rgb(100, 100, 100);
 }
 
 .greeting-text {
@@ -48,12 +48,12 @@
 }
 
 .icons-container i:hover {
-  color: var(--darker);
+  color: rgb(100, 100, 100);
 }
 
 .icons-container img:hover {
-  filter: invert(62%) sepia(64%) saturate(359%) hue-rotate(143deg)
-    brightness(96%) contrast(80%);
+  filter: invert(41%) sepia(2%) saturate(151%) hue-rotate(324deg)
+    brightness(92%) contrast(91%);
 }
 
 * {
@@ -106,7 +106,10 @@ a {
 
 footer {
   width: 100%;
-  background-color: var(--myblue);
+  /* border-style: solid; */
+  /* border-width: 1px;
+  border-top: solid; */
+  background-color: lightgray;
 }
 
 .top-portion {
@@ -277,15 +280,20 @@ h2 {
   padding: 0;
   font-size: 20px;
   margin-bottom: 15px;
+  /* color: white; */
 }
 
-.inner-footer-container > p > a {
+.inner-footer-container > p {
+  /* color: white; */
+}
+
+/* .inner-footer-container > p > a {
   color: rgb(100, 100, 100);
 }
 
 .inner-footer-container > p > a:hover {
   color: white;
-}
+} */
 
 .runner-container {
   transform: translateY(-4px);
@@ -468,10 +476,10 @@ h2 {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--darker);
+  background: black;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--darkest);
+  background: rgb(100, 100, 100);
 }
