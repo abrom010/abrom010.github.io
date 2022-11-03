@@ -205,6 +205,10 @@ h2 {
 	padding: 4px 8px;
 }
 
+.technology-container h2 {
+	text-align: start;
+}
+
 .experience {
 	display: flex;
 	flex-direction: column;
