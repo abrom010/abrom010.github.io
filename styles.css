@@ -256,7 +256,6 @@ h2 {
 }
 
 .experience .mobile-container {
-	width: 400px;
 	margin: 0;
 	display: flex;
 }
@@ -424,9 +423,28 @@ h2 {
 }
 
 @media (max-width: 425px) {
+
+	.experience img {
+		max-width: 90vw;
+	}
+
+	.experience div>a {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.mobile-container {
+		display: flex;
+		flex-direction: column;
+	}
+
 	.technology-container {
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.technology-container h2 {
+		margin-left: 10px;
 	}
 
 	.technology-container>div {
