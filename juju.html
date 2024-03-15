@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charging Time Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"], input[type="range"] {
+            width: 100%;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 10px;
+        }
+        #completion-time {
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Charging Time Calculator</h2>
+        <div class="form-group">
+            <label for="starting-charge">Starting Charge Slider (%)</label>
+            <input type="range" id="starting-charge" min="0" max="80" value="25" oninput="updateChargeLabel(); calculateChargeTime()">
+            <span id="charge-label">25%</span>
+        </div>
+        <div class="form-group">
+            <label for="starting-time">Starting Time Slider</label>
+            <input type="range" id="starting-time" min="0" max="1440" step="1" oninput="updateTimeLabel(); calculateChargeTime()">
+        </div>
+        <div class="result" id="result">
+            <p>Starting Time: <span id="starting-time-result"></span></p>
+            <p>Charge Completion Time: <span id="completion-time"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function updateChargeLabel() {
+            var chargeSlider = document.getElementById('starting-charge');
+            var chargeLabel = document.getElementById('charge-label');
+            chargeLabel.textContent = chargeSlider.value + '%';
+        }
+
+        function updateTimeLabel() {
+            var timeSlider = document.getElementById('starting-time');
+            var currentHour = new Date().getHours();
+            var currentMinute = new Date().getMinutes();
+            var value = parseFloat(timeSlider.value); // Minutes
+            var selectedHour = Math.floor(value / 60) % 24; // Ensure the hour is within 24 hours
+            var selectedMinute = Math.round(value % 60);
+            if (selectedMinute >= 60) {
+                selectedHour++;
+                selectedMinute -= 60;
+            }
+            var startingTime = selectedHour.toString().padStart(2, '0') + ':' + selectedMinute.toString().padStart(2, '0');
+            document.getElementById('starting-time-result').textContent = startingTime;
+        }
+
+        function calculateChargeTime() {
+            var startingCharge = parseInt(document.getElementById('starting-charge').value);
+            var batteryCapacity = 90; // kWh
+            var chargingRate = 7; // kW, level 2 charger
+            var startingTime = new Date();
+            var timeSlider = document.getElementById('starting-time');
+            var value = parseFloat(timeSlider.value); // Minutes
+            var selectedHour = Math.floor(value / 60) % 24; // Ensure the hour is within 24 hours
+            var selectedMinute = Math.round(value % 60);
+            if (selectedMinute >= 60) {
+                selectedHour++;
+                selectedMinute -= 60;
+            }
+            startingTime.setHours(selectedHour);
+            startingTime.setMinutes(selectedMinute);
+            var currentHour = new Date().getHours();
+            var currentMinute = new Date().getMinutes();
+            var chargingTime = (batteryCapacity * (0.8 - startingCharge / 100)) / chargingRate;
+            var completionTime = new Date(startingTime.getTime() + chargingTime * 3600000); // Convert hours to milliseconds
+
+            document.getElementById('completion-time').textContent = formatTime(completionTime);
+        }
+
+        function formatTime(time) {
+            var hours = time.getHours();
+            var minutes = time.getMinutes();
+            return hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0');
+        }
+
+        // Set the initial value of the starting time slider to represent the current time at the center
+        var currentHour = new Date().getHours();
+        var currentMinute = new Date().getMinutes();
+        var initialSliderValue = currentHour * 60 + currentMinute; // Convert to minutes
+        document.getElementById('starting-time').value = initialSliderValue;
+        updateTimeLabel();
+        calculateChargeTime(); // Calculate initially
+    </script>
+</body>
+</html>
